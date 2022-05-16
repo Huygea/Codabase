@@ -1,0 +1,539 @@
+      if (checkTimer2 < 0) {
+                    checkTimer2 = 0.2f;
+                    for (int xLoc = 0; xLoc < world_dotx_count; xLoc++) {
+                        for (int yLoc = 0; yLoc < world_doty_count; yLoc++) {
+
+
+                            if (spriteArray[xLoc][yLoc][0].z != 0.0) {
+
+
+                                if (spriteArray[xLoc][yLoc][0].z == 1.0) {
+
+
+                                    //CHECK FOR LITTLE TO LARGE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 3 && isItRotating[xLoc + 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc + 1].y * -1);
+
+
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 3 && isItRotating[xLoc + 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 3 && isItRotating[xLoc - 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc + 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 3 && isItRotating[xLoc - 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+
+
+                                    //CHECK FOR LITTLE TO MEDIUM
+
+
+                                    if (xLoc + 1 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 1][yLoc][0].z == 2 && isItRotating[xLoc + 1][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc].y * -1);
+
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc][0].z == 2 && isItRotating[xLoc - 1][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc].y * -1);
+
+                                        }
+                                    }
+                                    if (yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 1][0].z == 2 && isItRotating[xLoc][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc + 1].y * -1);
+
+                                        }
+                                    }
+                                    if (yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 1][0].z == 2 && isItRotating[xLoc][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+
+
+                                }
+
+                                if (spriteArray[xLoc][yLoc][0].z == 2) {
+
+                                    //CHECK FOR MIDDLE TO MIDDLE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 2 && isItRotating[xLoc + 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc + 1].y * -1);
+
+
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 2 && isItRotating[xLoc + 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 2 && isItRotating[xLoc - 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc + 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 2 && isItRotating[xLoc - 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+
+
+                                    //CHECK FOR MEDIUM TO LITTLE
+
+
+                                    if (xLoc + 1 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 1][yLoc][0].z == 1 && isItRotating[xLoc + 1][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc].y * -1);
+
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc][0].z == 1 && isItRotating[xLoc - 1][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc].y * -1);
+
+                                        }
+                                    }
+                                    if (yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 1][0].z == 1 && isItRotating[xLoc][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc + 1].y * -1);
+
+                                        }
+                                    }
+                                    if (yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 1][0].z == 1 && isItRotating[xLoc][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+
+
+                                }
+
+                                if (spriteArray[xLoc][yLoc][0].z == 3) {
+
+
+                                    //CHECK FOR LARGE TO LITTLE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 1 && isItRotating[xLoc + 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc + 1].y * -1);
+
+
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 1 && isItRotating[xLoc + 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 1 && isItRotating[xLoc - 1][yLoc + 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc + 1].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 1 && isItRotating[xLoc - 1][yLoc - 1].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 1][yLoc - 1].y * -1);
+
+                                        }
+                                    }
+
+
+                                    //CHECK FOR LARGE TO LARGE
+
+
+                                    if (xLoc + 2 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 2][yLoc][0].z == 3 && isItRotating[xLoc + 2][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc + 2][yLoc].y * -1);
+
+
+                                        }
+                                    }
+                                    if (yLoc - 2 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 2][0].z == 3 && isItRotating[xLoc][yLoc - 2].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc - 2].y * -1);
+
+                                        }
+                                    }
+                                    if (xLoc - 2 >= 0) {
+
+                                        if (spriteArray[xLoc - 2][yLoc][0].z == 3 && isItRotating[xLoc - 2][yLoc].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc - 2][yLoc].y * -1);
+
+                                        }
+                                    }
+                                    if (yLoc + 2 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 2][0].z == 3 && isItRotating[xLoc][yLoc + 2].x == 1 && isItRotating[xLoc][yLoc].x == 0) {
+
+                                            isItRotating[xLoc][yLoc] = new Vector2(1, isItRotating[xLoc][yLoc + 2].y * -1);
+
+
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        }
+                    }
+                }
+                //STUCK DETECTION
+                for (int xLoc = 0; xLoc < world_dotx_count; xLoc++) {
+                    for (int yLoc = 0; yLoc < world_doty_count; yLoc++) {
+                        if (spriteArray[xLoc][yLoc][0].z != 0.0) {
+
+                            checkTimer -= delta;
+                            if (checkTimer < 0) {
+                                checkTimer = 0.5f;
+                                if (spriteArray[xLoc][yLoc][0].z == 1.0) {
+
+                                    //CHECK FOR LITTLE TO LARGE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 3 && isItRotating[xLoc + 1][yLoc + 1].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][0].z = isItRotating[xLoc + 1][yLoc + 1].y;
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 3 && isItRotating[xLoc + 1][yLoc - 1].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][1].z = isItRotating[xLoc + 1][yLoc - 1].y;
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 3 && isItRotating[xLoc - 1][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][2].z = isItRotating[xLoc - 1][yLoc + 1].y;
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 3 && isItRotating[xLoc - 1][yLoc - 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][3].z = isItRotating[xLoc - 1][yLoc - 1].y;
+
+
+                                        }
+                                    }
+
+
+                                    //CHECK FOR LITTLE TO MEDIUM
+
+
+                                    if (xLoc + 1 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 1][yLoc][0].z == 2 && isItRotating[xLoc + 1][yLoc].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][4].z = isItRotating[xLoc + 1][yLoc].y;
+
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc][0].z == 2 && isItRotating[xLoc - 1][yLoc].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][5].z = isItRotating[xLoc - 1][yLoc].y;
+
+                                        }
+                                    }
+                                    if (yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 1][0].z == 2 && isItRotating[xLoc][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][6].z = isItRotating[xLoc][yLoc + 1].y;
+
+                                        }
+                                    }
+                                    if (yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 1][0].z == 2 && isItRotating[xLoc][yLoc - 1].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][7].z = isItRotating[xLoc][yLoc - 1].y;
+                                        }
+                                    }
+
+
+                                }
+
+                                if (spriteArray[xLoc][yLoc][0].z == 2) {
+
+                                    //CHECK FOR MIDDLE TO MIDDLE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 2 && isItRotating[xLoc + 1][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][8].z = isItRotating[xLoc + 1][yLoc + 1].y;
+
+
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 2 && isItRotating[xLoc + 1][yLoc - 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][9].z = isItRotating[xLoc + 1][yLoc - 1].y;
+
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 2 && isItRotating[xLoc - 1][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][10].z = isItRotating[xLoc - 1][yLoc + 1].y;
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 2 && isItRotating[xLoc - 1][yLoc - 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][11].z = isItRotating[xLoc - 1][yLoc - 1].y;
+
+                                        }
+                                    }
+
+
+                                    //CHECK FOR MEDIUM TO LITTLE
+
+
+                                    if (xLoc + 1 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 1][yLoc][0].z == 1 && isItRotating[xLoc + 1][yLoc].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][12].z = isItRotating[xLoc + 1][yLoc].y;
+
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc][0].z == 1 && isItRotating[xLoc - 1][yLoc].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][13].z = isItRotating[xLoc - 1][yLoc].y;
+
+                                        }
+                                    }
+                                    if (yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 1][0].z == 1 && isItRotating[xLoc][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][14].z = isItRotating[xLoc][yLoc + 1].y;
+
+                                        }
+                                    }
+                                    if (yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 1][0].z == 1 && isItRotating[xLoc][yLoc - 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][15].z = isItRotating[xLoc][yLoc - 1].y;
+
+                                        }
+                                    }
+
+
+                                }
+
+                                if (spriteArray[xLoc][yLoc][0].z == 3) {
+
+
+                                    //CHECK FOR LARGE TO LITTLE
+
+                                    if (xLoc + 1 < world_dotx_count && yLoc + 1 < world_doty_count) {
+                                        if (spriteArray[xLoc + 1][yLoc + 1][0].z == 1 && isItRotating[xLoc + 1][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][16].z = isItRotating[xLoc + 1][yLoc + 1].y;
+
+
+                                        }
+                                    }
+                                    if (xLoc + 1 < world_dotx_count && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc + 1][yLoc - 1][0].z == 1 && isItRotating[xLoc + 1][yLoc - 1].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][17].z = isItRotating[xLoc + 1][yLoc - 1].y;
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc + 1 < world_doty_count) {
+
+                                        if (spriteArray[xLoc - 1][yLoc + 1][0].z == 1 && isItRotating[xLoc - 1][yLoc + 1].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][18].z = isItRotating[xLoc - 1][yLoc + 1].y;
+
+                                        }
+                                    }
+                                    if (xLoc - 1 >= 0 && yLoc - 1 >= 0) {
+
+                                        if (spriteArray[xLoc - 1][yLoc - 1][0].z == 1 && isItRotating[xLoc - 1][yLoc - 1].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][19].z = isItRotating[xLoc - 1][yLoc - 1].y;
+                                        }
+                                    }
+
+
+                                    //CHECK FOR LARGE TO LARGE
+
+
+                                    if (xLoc + 2 < world_dotx_count) {
+                                        if (spriteArray[xLoc + 2][yLoc][0].z == 3 && isItRotating[xLoc + 2][yLoc].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][20].z = isItRotating[xLoc + 2][yLoc].y;
+
+
+                                        }
+                                    }
+                                    if (yLoc - 2 >= 0) {
+
+                                        if (spriteArray[xLoc][yLoc - 2][0].z == 3 && isItRotating[xLoc][yLoc - 2].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][21].z = isItRotating[xLoc][yLoc - 2].y;
+                                        }
+                                    }
+                                    if (xLoc - 2 >= 0) {
+
+                                        if (spriteArray[xLoc - 2][yLoc][0].z == 3 && isItRotating[xLoc - 2][yLoc].x == 1) {
+                                            stuckCheckList[xLoc][yLoc][22].z = isItRotating[xLoc - 2][yLoc].y;
+
+                                        }
+                                    }
+                                    if (yLoc + 2 < world_doty_count) {
+
+                                        if (spriteArray[xLoc][yLoc + 2][0].z == 3 && isItRotating[xLoc][yLoc + 2].x == 1) {
+
+                                            stuckCheckList[xLoc][yLoc][23].z = isItRotating[xLoc][yLoc + 2].y;
+
+
+                                        }
+                                    }
+
+
+                                }
+
+
+                                //STUCK DETECTION
+
+
+                                for (int stuckx = 0; stuckx < world_dotx_count; stuckx++) {
+                                    for (int stucky = 0; stucky < world_doty_count; stucky++) {
+                                        int a = 0;
+                                        for (int stuckz = 0; stuckz < 24; stuckz++) {
+
+
+                                            if (stuckCheckList[stuckx][stucky][stuckz].z != 0) {
+
+                                                stuckArray[stuckx][stucky][a].z = stuckCheckList[stuckx][stucky][stuckz].z;
+                                                a++;
+                                            }
+
+
+                                        }
+
+
+                                    }
+                                }
+
+                                for (int ha = 0; ha < 24; ha++) {
+                                    if (stuckArray[xLoc][yLoc][ha].z != 0)
+                                        if (stuckArray[xLoc][yLoc][0].z != stuckArray[xLoc][yLoc][ha].z || !isThisRolling[xLoc][yLoc]) {
+
+
+                                            stuckCheck = true;
+
+
+                                        } else {
+
+
+                                            stuckCheck = false;
+                                        }
+
+
+                                }
+
+
+
+
+
+
+
+
+                            }
+                            if (stuckCheck) {
+                                for (int stuckx = 0; stuckx < world_dotx_count; stuckx++) {
+                                    for (int stucky = 0; stucky < world_doty_count; stucky++) {
+
+                                        isItRotating[stuckx][stucky].x = 0;
+
+
+                                    }
+
+                                }
+
+
+                            }
+
+                            if (isItRotating[xLoc][yLoc].x == 1) {
+
+
+                                if (!isThisRolling[xLoc][yLoc]) {
+
+                                    isItRotating[xLoc][yLoc].x = 0;
+                                    continue;
+
+
+                                }
+                                spriteContainer[xLoc][yLoc].setRotation(spriteContainer[xLoc][yLoc].getRotation() + isItRotating[xLoc][yLoc].y * -1);
